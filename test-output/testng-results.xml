@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-04-25T21:49:52 ART" name="Default suite" finished-at="2023-04-25T21:49:53 ART" duration-ms="597">
+    <groups>
+    </groups>
+    <test started-at="2023-04-25T21:49:52 ART" name="Default test" finished-at="2023-04-25T21:49:53 ART" duration-ms="597">
+      <class name="pruebas.MainTest">
+        <test-method is-config="true" signature="abrirNavegador()[pri:0, instance:pruebas.MainTest@1c7696c6]" started-at="2023-04-25T21:49:48 ART" name="abrirNavegador" finished-at="2023-04-25T21:49:52 ART" duration-ms="3929" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- abrirNavegador -->
+        <test-method signature="iniciarSesion()[pri:0, instance:pruebas.MainTest@1c7696c6]" started-at="2023-04-25T21:49:52 ART" name="iniciarSesion" finished-at="2023-04-25T21:49:53 ART" duration-ms="502" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniciarSesion -->
+        <test-method is-config="true" signature="cerrarNavegador()[pri:0, instance:pruebas.MainTest@1c7696c6]" started-at="2023-04-25T21:49:53 ART" name="cerrarNavegador" finished-at="2023-04-25T21:50:03 ART" duration-ms="10205" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cerrarNavegador -->
+      </class> <!-- pruebas.MainTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
