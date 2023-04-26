@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>scripts</groupId>
-  <artifactId>sauceDemo</artifactId>
+  <groupId>eduIT</groupId>
+  <artifactId>scripts_clases</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>sauceDemo</name>
+  <name>scripts_clases</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -18,6 +18,8 @@
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
+
+<!-- JUnit es un conjunto de bibliotecas que son utilizadas para hacer pruebas unitarias de aplicaciones Java-->
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -25,6 +27,43 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+        
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.8.1</version>
+	</dependency>
+	
+<!-- libreria poi para escribir documentos con evidencias de cap de pantalla -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml</artifactId>
+	    <version>5.2.3</version>
+	</dependency>
+	
+<!--	libreria testng para generar reportes y suite de pruebas-->
+	<dependency> 
+	    <groupId>org.testng</groupId>
+	    <artifactId>testng</artifactId>
+	    <version>7.7.1</version>
+	    <scope>test</scope>
+	</dependency>
+	
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.11.0</version>
+	</dependency>
+	
+<!--Libreria no oficial para capturar scroll completo de una pantalla-->
+	<dependency>
+	    <groupId>ru.yandex.qatools.ashot</groupId>
+	    <artifactId>ashot</artifactId>
+	    <version>1.5.4</version>
+	</dependency>
+
   </dependencies>
 
   <build>
