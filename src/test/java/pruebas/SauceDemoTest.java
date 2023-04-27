@@ -8,8 +8,9 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import paginas.PaginaInicio;
+import paginas.PaginaProductos;
 
-public class MainTest {
+public class SauceDemoTest {
 	String url = "https://www.saucedemo.com/";
 	WebDriver driver;
 	
@@ -31,6 +32,14 @@ public class MainTest {
 		login.hacerClickEnLogin();
 		
 	}
+	
+	@Test
+	public void agregarItem() { //crear una clase base y extenderla para no repetir el inicio de sesión.
+		PaginaProductos productos = new PaginaProductos(driver);
+		productos.agregarAlCarrito();
+		
+	}
+
 	
 	@AfterSuite
 	public void cerrarNavegador() throws InterruptedException{
