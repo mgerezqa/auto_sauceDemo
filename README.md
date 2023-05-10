@@ -9,7 +9,7 @@ En el proyecto se validarán las siguientes funcionalidades:
 
 ## Skills 
 - Maven Project 
- - TestNG : CrossBrowsing, Data Provider , test report.
+ - TestNG : CrossBrowsing, Data Provider , Test Report.
  - JUnit
  - Page Object Model
  - Page Factory
