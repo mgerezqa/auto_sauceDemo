@@ -1,7 +1,7 @@
 ## Sauce Demo
 
 Se realiza una practica de automatización sobre el sitio de retail saucedemo.com.
-En el proyecto se validarán las siguientes funcionalidades: 
+En el proyecto se realizará la automatización de los casos de prueba para validar las siguientes funcionalidades: 
 
  - Inicio de Sesión
  - Generación de una orden de compras
