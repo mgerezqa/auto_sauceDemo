@@ -1,8 +1,14 @@
 package pruebas;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -13,9 +19,10 @@ import paginas.PaginaProductos;
 public class SauceDemoTest {
 	String url = "https://www.saucedemo.com/";
 	WebDriver driver;
+	private By title;
 	
 	@BeforeSuite //rutina para abrir el navegador
-	public void abrirNavegador() { //se suele llamar setUp()
+	public void setUp() { //se suele llamar setUp()
 		// 1) Configurando el navegador Chrome
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
@@ -24,6 +31,8 @@ public class SauceDemoTest {
 		driver.get(url);
 //		3)  maximizar el navegador
 		driver.manage().window().maximize();
+		
+		title = By.className("app_logo");
 	}
 	@Test
 	public void iniciarSesion() {
@@ -34,10 +43,21 @@ public class SauceDemoTest {
 	}
 	
 	@Test
-	public void agregarItem() { //crear una clase base y extenderla para no repetir el inicio de sesión.
-		PaginaProductos productos = new PaginaProductos(driver);
-		productos.agregarAlCarrito();
+	public void agregarItem() { //crear una clase base y extenderla para no repetir el login.
 		
+		this.iniciarSesion();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		PaginaProductos productos = new PaginaProductos(driver);
+		productos.agregarLucesBicicleta();
+	}
+	
+	@Test
+	public void agregarTodosLosItems() {
+
+		this.iniciarSesion();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		PaginaProductos productos = new PaginaProductos(driver);
+		productos.agregarTodosLosProductos();
 	}
 
 	
