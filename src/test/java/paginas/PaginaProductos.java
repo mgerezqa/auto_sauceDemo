@@ -24,6 +24,8 @@ public class PaginaProductos {
 	@FindBy(className = "btn_inventory")
 	List <WebElement> btnAddAll;
 	
+	@FindBy(using = "shopping_cart_container")
+	WebElement btnCart;
 	
 	public PaginaProductos(WebDriver driver){
 		PageFactory.initElements(driver, this);
@@ -44,5 +46,9 @@ public class PaginaProductos {
 
 		System.out.println(btnAddAll.size());
 		Assert.assertTrue(btnAddAll.size()==6);
+	}
+	
+	public void hacerClickEnCarrito() {
+		btnCart.click();
 	}
 }

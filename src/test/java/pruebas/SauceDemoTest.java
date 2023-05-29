@@ -12,14 +12,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-
+import java.io.File;
+import java.io.IOException;
 import paginas.PaginaInicio;
 import paginas.PaginaProductos;
+import paginas.PaginaCarrito;
+import paginas.PaginaCheckOut;
+import paginas.PaginaCheckOutOverview;
+import org.apache.commons.io.FileUtils;
 
 public class SauceDemoTest {
 	String url = "https://www.saucedemo.com/";
 	WebDriver driver;
-	private By title;
+//	private By title;
+	String rutaEvidencias = "..\\Evidencias\\";
+	File screen;
+
 	
 	@BeforeSuite //rutina para abrir el navegador
 	public void setUp() { //se suele llamar setUp()
@@ -32,7 +40,7 @@ public class SauceDemoTest {
 //		3)  maximizar el navegador
 		driver.manage().window().maximize();
 		
-		title = By.className("app_logo");
+//		title = By.className("app_logo");
 	}
 	@Test
 	public void iniciarSesion() {
@@ -49,7 +57,32 @@ public class SauceDemoTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		PaginaProductos productos = new PaginaProductos(driver);
 		productos.agregarLucesBicicleta();
+	
 	}
+
+	@Test
+	public void realizarCompra() { //crear una clase base y extenderla para no repetir el login.
+		
+		this.iniciarSesion();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		PaginaProductos productos = new PaginaProductos(driver);
+		productos.agregarLucesBicicleta();
+		productos.hacerClickEnCarrito();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	
+		PaginaCarrito carrito = new PaginaCarrito(driver);
+		carrito.hacerClickEnCheckOut();
+		
+		PaginaCheckOut checkOut = new PaginaCheckOut (driver);
+		checkOut.ingresarNombre("Martin"); //random
+		checkOut.ingresarApellido("Gerez"); //random
+		checkOut.ingresarCodigoPostal("1201"); //random
+		checkOut.hacerClickEnContinuE();
+		
+		PaginaCheckOutOverview overwiew = new PaginaCheckOutOverview(driver);
+		overwiew.hacerClickEnFinish();
+	}
+	
 	
 	@Test
 	public void agregarTodosLosItems() {

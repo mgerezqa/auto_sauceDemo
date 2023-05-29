@@ -35,7 +35,6 @@ public class PaginaInicio {
 		buttonLogin.click();
 	}
 	
-
 	
 	
 	

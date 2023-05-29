@@ -6,7 +6,7 @@
       <class name="pruebas.SauceDemoTest">
         <methods>
           <include name="cerrarNavegador"/>
-          <include name="agregarTodosLosItems"/>
+          <include name="realizarCompra"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- pruebas.SauceDemoTest -->
