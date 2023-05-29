@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="PruebaEnChrome">
+	  <parameter name="navegador" value="Chrome"></parameter>
+    <classes>
+      <class name="pruebas.SauceDemoTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="PruebaEnFirefox">
+	<parameter name="navegador" value="Firefox"></parameter>
+    <classes>
+      <class name="pruebas.SauceDemoTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="PruebaEnEdge">
+	<parameter name="navegador" value="Edge"></parameter>
+    <classes>
+      <class name="pruebas.SauceDemoTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

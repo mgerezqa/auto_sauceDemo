@@ -16,10 +16,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -42,7 +47,7 @@ public class SauceDemoTest {
 //	private By title;
 
 	
-	@BeforeSuite //rutina para abrir el navegador
+	@BeforeSuite
 	public void setUp() { //se suele llamar setUp()
 		// 1) Configurando el navegador Chrome
 		ChromeOptions options = new ChromeOptions();
@@ -55,6 +60,25 @@ public class SauceDemoTest {
 		
 //		title = By.className("app_logo");
 	}
+	
+//	@Parameters("navegador") // la variable navegador se pasa por el archivo de configuración XML
+//	@BeforeTest
+//	public void abrirNavegador(String navegador) {
+//		if (navegador.equalsIgnoreCase("CHROME")) {
+//			ChromeOptions options = new ChromeOptions();
+//			options.addArguments("--remote-allow-origins=*");
+//			driver = new ChromeDriver(options);
+//		} else if (navegador.equalsIgnoreCase("EDGE")) { 
+//			driver = new EdgeDriver();
+//		} else if (navegador.equalsIgnoreCase("FIREFOX")) {
+//			driver = new FirefoxDriver();
+//		}
+//				
+//		driver.get(url);
+//		driver.manage().window().maximize();
+//	}
+//	
+	
 	@Test
 	public void iniciarSesion() {
 		PaginaInicio login = new PaginaInicio (driver);
@@ -122,10 +146,16 @@ public class SauceDemoTest {
 		
 //		07 Captura: Finish
 		CapturaEvidencia.capturarPantallaEnDocumento(driver, rutaEvidencias + "img.jpg", rutaEvidencias + nombreDocumento, "7- Finalizar Compra");
-
-		
 		PaginaCheckOutComplete checkFinish = new PaginaCheckOutComplete (driver);
+	
+		
+		// Comprobacion de orden pre-generada
+		Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/checkout-complete.html");
+		
 		checkFinish.hacerClickEnBackHome();
+		
+	
+
 	}
 	
 	

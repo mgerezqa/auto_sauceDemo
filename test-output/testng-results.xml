@@ -2,20 +2,20 @@
 <testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-29T01:23:37 ART" name="Default suite" finished-at="2023-05-29T01:23:50 ART" duration-ms="12256">
+  <suite started-at="2023-05-29T19:45:22 ART" name="Default suite" finished-at="2023-05-29T19:45:34 ART" duration-ms="12643">
     <groups>
     </groups>
-    <test started-at="2023-05-29T01:23:37 ART" name="Default test" finished-at="2023-05-29T01:23:50 ART" duration-ms="12256">
+    <test started-at="2023-05-29T19:45:22 ART" name="Default test" finished-at="2023-05-29T19:45:34 ART" duration-ms="12643">
       <class name="pruebas.SauceDemoTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:pruebas.SauceDemoTest@63376bed]" started-at="2023-05-29T01:23:34 ART" name="setUp" finished-at="2023-05-29T01:23:37 ART" duration-ms="3480" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:pruebas.SauceDemoTest@63376bed]" started-at="2023-05-29T19:45:18 ART" name="setUp" finished-at="2023-05-29T19:45:22 ART" duration-ms="3403" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="realizarCompra()[pri:0, instance:pruebas.SauceDemoTest@63376bed]" started-at="2023-05-29T01:23:37 ART" name="realizarCompra" finished-at="2023-05-29T01:23:50 ART" duration-ms="12206" status="PASS">
+        <test-method signature="realizarCompra()[pri:0, instance:pruebas.SauceDemoTest@63376bed]" started-at="2023-05-29T19:45:22 ART" name="realizarCompra" finished-at="2023-05-29T19:45:34 ART" duration-ms="12597" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- realizarCompra -->
-        <test-method is-config="true" signature="cerrarNavegador()[pri:0, instance:pruebas.SauceDemoTest@63376bed]" started-at="2023-05-29T01:23:50 ART" name="cerrarNavegador" finished-at="2023-05-29T01:23:55 ART" duration-ms="5114" status="PASS">
+        <test-method is-config="true" signature="cerrarNavegador()[pri:0, instance:pruebas.SauceDemoTest@63376bed]" started-at="2023-05-29T19:45:34 ART" name="cerrarNavegador" finished-at="2023-05-29T19:45:39 ART" duration-ms="5114" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cerrarNavegador -->
