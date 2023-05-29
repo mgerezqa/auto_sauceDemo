@@ -1,6 +1,9 @@
 package pruebas;
 
 import org.testng.annotations.Test;
+
+import Utilidades.CapturaEvidencia;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
@@ -19,6 +22,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+
 import java.io.File;
 import java.io.IOException;
 import paginas.PaginaInicio;
@@ -32,6 +37,7 @@ public class SauceDemoTest {
 	String url = "https://www.saucedemo.com/";
 	WebDriver driver;
 	String rutaEvidencias = "..\\sauceDemo\\Evidencias\\";
+	String nombreDocumento = "Documento de Evidencias - DemoBlaze.docx";
 	File screen;
 //	private By title;
 
@@ -68,33 +74,30 @@ public class SauceDemoTest {
 	}
 
 	@Test
-	public void realizarCompra() throws IOException { //crear una clase base y extenderla para no repetir el login.
+	public void realizarCompra() throws IOException, InvalidFormatException, InterruptedException { //crear una clase base y extenderla para no repetir el login.
 		
 //		01 Captura: Ingreso de Credenciales
-		screen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // sacar foto
-		FileUtils.copyFile(screen, new File(rutaEvidencias + "01_pantallaInicial.jpg")); // copiamos la info de captura "screen" en el archivo 01_pantallaInicial
-		
+		CapturaEvidencia.escribirTituloEnDocumento(nombreDocumento,"Documento de Evidencias - DemoBlaze",18);
+		CapturaEvidencia.capturarPantallaEnDocumento(driver, rutaEvidencias + "img.jpg", rutaEvidencias + nombreDocumento, "1 - Pantalla Principal");
+	
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		this.iniciarSesion();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 //		02 Captura: Inicio de Sesion Correcto
-		screen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // sacar foto
-		FileUtils.copyFile(screen, new File(rutaEvidencias + "02_IniciarSesion.jpg")); // copiamos la info de captura "screen" en el archivo 01_pantallaInicial
+		CapturaEvidencia.capturarPantallaEnDocumento(driver, rutaEvidencias + "img.jpg", rutaEvidencias + nombreDocumento, "2 - Iniciar Sesion");
 
 		PaginaProductos productos = new PaginaProductos(driver);
 		productos.agregarLucesBicicleta();
 
 //		03 Captura: Agregar Producto a Carrito
-		screen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // sacar foto
-		FileUtils.copyFile(screen, new File(rutaEvidencias + "03_AgregarProducto.jpg")); // copiamos la info de captura "screen" en el archivo 01_pantallaInicial
-		
+		CapturaEvidencia.capturarPantallaEnDocumento(driver, rutaEvidencias + "img.jpg", rutaEvidencias + nombreDocumento, "3 - Agregar Producto");
+
 		
 		productos.hacerClickEnCarrito();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 //		04 Captura: Ver Orden de Compra
-		screen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // sacar foto
-		FileUtils.copyFile(screen, new File(rutaEvidencias + "04_OrdenDeCompra.jpg")); // copiamos la info de captura "screen" en el archivo 01_pantallaInicial
+		CapturaEvidencia.capturarPantallaEnDocumento(driver, rutaEvidencias + "img.jpg", rutaEvidencias + nombreDocumento, "4 - Ver Orden de Compra");
 
 		PaginaCarrito carrito = new PaginaCarrito(driver);
 		carrito.hacerClickEnCheckOut();
@@ -105,22 +108,22 @@ public class SauceDemoTest {
 		checkOut.ingresarApellido("Gerez"); //random
 		checkOut.ingresarCodigoPostal("1201"); //random
 //		05 Captura: Completo el checkOut information
-		screen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // sacar foto
-		FileUtils.copyFile(screen, new File(rutaEvidencias + "05_CheckOut.jpg")); // copiamos la info de captura "screen" en el archivo 01_pantallaInicial
+		CapturaEvidencia.capturarPantallaEnDocumento(driver, rutaEvidencias + "img.jpg", rutaEvidencias + nombreDocumento, "5 - CheckOut Information");
+
 
 		checkOut.hacerClickEnContinuE();
 
 //		06 Captura: Overwiew
-		screen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // sacar foto
-		FileUtils.copyFile(screen, new File(rutaEvidencias + "06_Overwiew.jpg")); // copiamos la info de captura "screen" en el archivo 01_pantallaInicial
+		CapturaEvidencia.capturarPantallaEnDocumento(driver, rutaEvidencias + "img.jpg", rutaEvidencias + nombreDocumento, "6 - CheckOut Overwiew");
+
 		
 		PaginaCheckOutOverview overwiew = new PaginaCheckOutOverview(driver);
 		overwiew.hacerClickEnFinish();
 		
 //		07 Captura: Finish
-		screen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // sacar foto
-		FileUtils.copyFile(screen, new File(rutaEvidencias + "07_Finish.jpg")); // copiamos la info de captura "screen" en el archivo 01_pantallaInicial
+		CapturaEvidencia.capturarPantallaEnDocumento(driver, rutaEvidencias + "img.jpg", rutaEvidencias + nombreDocumento, "7- Finalizar Compra");
 
+		
 		PaginaCheckOutComplete checkFinish = new PaginaCheckOutComplete (driver);
 		checkFinish.hacerClickEnBackHome();
 	}
