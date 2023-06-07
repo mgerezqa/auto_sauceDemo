@@ -7,11 +7,8 @@
       <class name="pruebas.SauceDemoTest">
         <methods>
           <include name="cerrarNavegador"/>
-          <include name="agregarTodosLosItems"/>
-          <include name="realizarCompra"/>
-          <include name="iniciarSesion"/>
-          <include name="agregarItem"/>
-          <include name="setUp"/>
+          <include name="iniciarYCerrarSesion" invocation-numbers="1"/>
+          <include name="abrirNavegador"/>
         </methods>
       </class> <!-- pruebas.SauceDemoTest -->
     </classes>
@@ -22,11 +19,8 @@
       <class name="pruebas.SauceDemoTest">
         <methods>
           <include name="cerrarNavegador"/>
-          <include name="agregarTodosLosItems"/>
-          <include name="realizarCompra"/>
-          <include name="iniciarSesion"/>
-          <include name="agregarItem"/>
-          <include name="setUp"/>
+          <include name="iniciarYCerrarSesion" invocation-numbers="1"/>
+          <include name="abrirNavegador"/>
         </methods>
       </class> <!-- pruebas.SauceDemoTest -->
     </classes>
@@ -39,8 +33,9 @@
           <include name="cerrarNavegador"/>
           <include name="agregarTodosLosItems"/>
           <include name="realizarCompra"/>
-          <include name="iniciarSesion"/>
-          <include name="setUp"/>
+          <include name="iniciarYCerrarSesion"/>
+          <include name="agregarItem"/>
+          <include name="abrirNavegador"/>
         </methods>
       </class> <!-- pruebas.SauceDemoTest -->
     </classes>

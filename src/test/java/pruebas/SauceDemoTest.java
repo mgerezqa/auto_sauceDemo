@@ -50,37 +50,37 @@ public class SauceDemoTest {
 //	private By title;
 
 	
-	@BeforeSuite
-	public void setUp() { //se suele llamar setUp()
-		// 1) Configurando el navegador Chrome
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--remote-allow-origins=*");
-		driver = new ChromeDriver(options);
-		// 2) Abrir el navegador en la página donde haremos la prueba
+//	@BeforeSuite
+//	public void setUp() { //se suele llamar setUp()
+//		// 1) Configurando el navegador Chrome
+//		ChromeOptions options = new ChromeOptions();
+//		options.addArguments("--remote-allow-origins=*");
+//		driver = new ChromeDriver(options);
+//		// 2) Abrir el navegador en la página donde haremos la prueba
+//		driver.get(url);
+////		3)  maximizar el navegador
+//		driver.manage().window().maximize();
+//		
+////		title = By.className("app_logo");
+//	}
+	
+	@Parameters("navegador") // la variable navegador se pasa por el archivo de configuración XML
+	@BeforeTest
+	public void abrirNavegador(String navegador) {
+		if (navegador.equalsIgnoreCase("CHROME")) {
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+			driver = new ChromeDriver(options);
+		} else if (navegador.equalsIgnoreCase("EDGE")) { 
+			driver = new EdgeDriver();
+		} else if (navegador.equalsIgnoreCase("FIREFOX")) {
+			driver = new FirefoxDriver();
+		}
+				
 		driver.get(url);
-//		3)  maximizar el navegador
 		driver.manage().window().maximize();
-		
-//		title = By.className("app_logo");
 	}
 	
-//	@Parameters("navegador") // la variable navegador se pasa por el archivo de configuración XML
-//	@BeforeTest
-//	public void abrirNavegador(String navegador) {
-//		if (navegador.equalsIgnoreCase("CHROME")) {
-//			ChromeOptions options = new ChromeOptions();
-//			options.addArguments("--remote-allow-origins=*");
-//			driver = new ChromeDriver(options);
-//		} else if (navegador.equalsIgnoreCase("EDGE")) { 
-//			driver = new EdgeDriver();
-//		} else if (navegador.equalsIgnoreCase("FIREFOX")) {
-//			driver = new FirefoxDriver();
-//		}
-//				
-//		driver.get(url);
-//		driver.manage().window().maximize();
-//	}
-//	
 	public void iniciarSesion() { //inicio de sesion por happy path
 		PaginaInicio login = new PaginaInicio (driver);
 		login.ingresarCredenciales("standard_user","secret_sauce");
@@ -138,7 +138,7 @@ public class SauceDemoTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		PaginaProductos productos = new PaginaProductos(driver);
 		productos.agregarLucesBicicleta();
-	
+		this.cerrarSesion();
 	}
 
 	@Test
@@ -210,6 +210,7 @@ public class SauceDemoTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		PaginaProductos productos = new PaginaProductos(driver);
 		productos.agregarTodosLosProductos();
+		this.cerrarSesion();
 	}
 
 	
