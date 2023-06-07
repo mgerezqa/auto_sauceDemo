@@ -27,7 +27,9 @@ public class PaginaInicio {
 	}
 	
 	public void ingresarCredenciales(String user, String password) {
+		txtName.clear();
 		txtName.sendKeys(user);
+		txtPassword.clear();
 		txtPassword.sendKeys(password);
 	}
 	

@@ -27,6 +27,13 @@ public class PaginaProductos {
 	@FindBy(using = "shopping_cart_container")
 	WebElement btnCart;
 	
+	@FindBy(how = How.ID, using = "react-burger-menu-btn")
+	WebElement btnMenu;
+	
+	@FindBy(how = How.CSS, using = "#logout_sidebar_link")
+	WebElement btnLogout;
+	
+	
 	public PaginaProductos(WebDriver driver){
 		PageFactory.initElements(driver, this);
 		}
@@ -50,5 +57,13 @@ public class PaginaProductos {
 	
 	public void hacerClickEnCarrito() {
 		btnCart.click();
+	}
+	
+	public void hacerClickEnMenu() {
+		btnMenu.click();
+	}
+	
+	public void hacerClickenCerrarSesion() {
+		btnLogout.click();
 	}
 }

@@ -10,7 +10,8 @@
           <include name="agregarTodosLosItems"/>
           <include name="realizarCompra"/>
           <include name="iniciarSesion"/>
-          <include name="abrirNavegador"/>
+          <include name="agregarItem"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- pruebas.SauceDemoTest -->
     </classes>
@@ -24,7 +25,8 @@
           <include name="agregarTodosLosItems"/>
           <include name="realizarCompra"/>
           <include name="iniciarSesion"/>
-          <include name="abrirNavegador"/>
+          <include name="agregarItem"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- pruebas.SauceDemoTest -->
     </classes>
@@ -38,8 +40,7 @@
           <include name="agregarTodosLosItems"/>
           <include name="realizarCompra"/>
           <include name="iniciarSesion"/>
-          <include name="agregarItem"/>
-          <include name="abrirNavegador"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- pruebas.SauceDemoTest -->
     </classes>

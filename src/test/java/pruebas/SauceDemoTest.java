@@ -3,6 +3,7 @@ package pruebas;
 import org.testng.annotations.Test;
 
 import Utilidades.CapturaEvidencia;
+import Utilidades.DatosExcel;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -24,6 +25,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.apache.commons.io.FileUtils;
@@ -43,6 +45,7 @@ public class SauceDemoTest {
 	WebDriver driver;
 	String rutaEvidencias = "..\\sauceDemo\\Evidencias\\";
 	String nombreDocumento = "Documento de Evidencias - DemoBlaze.docx";
+	String directorioDatos = "..\\sauceDemo\\Datos\\";
 	File screen;
 //	private By title;
 
@@ -78,13 +81,56 @@ public class SauceDemoTest {
 //		driver.manage().window().maximize();
 //	}
 //	
-	
-	@Test
 	public void iniciarSesion() {
 		PaginaInicio login = new PaginaInicio (driver);
-		login.ingresarCredenciales("standard_user","secret_sauce");
+		login.ingresarCredenciales("standar_user","secret_sauce");
+		login.hacerClickEnLogin();
+		// Si inicia sesión, el botón Sign In ya no aparecerá
+		// Entonces para resolverlo habría que validar si inició o no
+		// En caso positivo, habría que hacer clic en Sign Out
+	}
+
+	
+	
+	
+	@Test(dataProvider = "Datos Excel")
+	public void iniciarYCerrarSesion(String user, String password) {
+		PaginaInicio login = new PaginaInicio (driver);
+		login.ingresarCredenciales(user,password);
 		login.hacerClickEnLogin();
 		
+        WebElement inventoryContainer = driver.findElement(By.id("inventory_container"));
+
+        // Verificar si se ha iniciado sesión correctamente
+        if (inventoryContainer.isDisplayed()) {
+            System.out.println("Inicio de sesión exitoso");
+    		this.cerrarSesion();
+
+        } else {
+            System.out.println("Fallo en el inicio de sesión");
+        }		
+		// Si inicia sesión, el botón Sign In ya no aparecerá
+		// Entonces para resolverlo habría que validar si inició o no
+		// En caso positivo, habría que hacer clic en Sign Out
+	}
+	
+	@DataProvider(name = "Datos Excel")
+	public Object[][] obtenerDatosExcel() throws Exception {
+		// Leer los datos que están en el archivo excel
+		// y armar un arreglo de objetos con esos datos
+		return DatosExcel.leerExcel(
+				directorioDatos + "Datos_IniciarSesion.xlsx", 
+				"Hoja1");
+	}
+	
+	
+
+	public void cerrarSesion() { //No utilizo @Test porque es un metodo que debe ejecutarse luego de iniciar sesión
+		
+		PaginaProductos producto = new PaginaProductos(driver);
+		producto.hacerClickEnMenu();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		producto.hacerClickenCerrarSesion();
 	}
 	
 	@Test
@@ -168,6 +214,7 @@ public class SauceDemoTest {
 		productos.agregarTodosLosProductos();
 	}
 
+	
 	
 	@AfterSuite
 	public void cerrarNavegador() throws InterruptedException{
