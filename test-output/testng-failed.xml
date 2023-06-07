@@ -6,7 +6,7 @@
       <class name="pruebas.SauceDemoTest">
         <methods>
           <include name="cerrarNavegador"/>
-          <include name="iniciarYCerrarSesion" invocation-numbers="1"/>
+          <include name="realizarCompra"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- pruebas.SauceDemoTest -->

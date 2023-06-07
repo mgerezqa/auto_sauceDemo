@@ -81,13 +81,11 @@ public class SauceDemoTest {
 //		driver.manage().window().maximize();
 //	}
 //	
-	public void iniciarSesion() {
+	public void iniciarSesion() { //inicio de sesion por happy path
 		PaginaInicio login = new PaginaInicio (driver);
-		login.ingresarCredenciales("standar_user","secret_sauce");
+		login.ingresarCredenciales("standard_user","secret_sauce");
 		login.hacerClickEnLogin();
-		// Si inicia sesión, el botón Sign In ya no aparecerá
-		// Entonces para resolverlo habría que validar si inició o no
-		// En caso positivo, habría que hacer clic en Sign Out
+
 	}
 
 	
@@ -200,7 +198,7 @@ public class SauceDemoTest {
 		
 		checkFinish.hacerClickEnBackHome();
 		
-	
+		this.cerrarSesion();
 
 	}
 	
