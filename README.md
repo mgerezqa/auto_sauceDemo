@@ -2,15 +2,15 @@
 
 # Descripción del proyecto 
 
-El sitio saucedemo.com es una tienda de ropa y accesorios en línea. Ofrece a los usuarios la posibilidad de explorar un catálogo de productos, agregar artículos al carrito de compras, realizar pagos y gestionar su perfil de usuario.
+El sitio [saucedemo.com](https://www.saucedemo.com/) es un sitio de prácticas que simula una tienda de venta de ropa y accesorios en línea. Ofrece a los usuarios la posibilidad de explorar un catálogo de productos, agregar artículos al carrito de compras, realizar pagos y completar los datos de la compra.
 
-La automatización de las pruebas permitió simular las interacciones de los usuarios con el sitio web. Se desarrollaron casos de prueba que cubrieron diversas funcionalidades, como la navegación por las diferentes secciones del sitio, la búsqueda de productos, el proceso de compra, la gestión del carrito y la verificación de la integridad de los datos.
+La automatización de las pruebas permitió simular las interacciones de los usuarios con el sitio web. Se desarrollaron casos de prueba que cubrieron diversas funcionalidades, como la navegación por las diferentes secciones del sitio : el orden de los productos según un criterio, el proceso de compra, la gestión del carrito y la verificación de la integridad de los datos.
 
 Para lograrlo, se utilizó el framework Selenium, que proporciona una interfaz de automatización de navegadores web. Se empleó el lenguaje de programación Java para desarrollar los scripts de prueba y se aplicaron técnicas de Page Object Model (POM) para mejorar la estructura y reutilización del código.
 
-El proyecto demostró habilidades en el diseño de casos de prueba, la implementación de scripts de automatización, el uso de Selenium WebDriver y el conocimiento de programación en Java. Además, se prestaron especial atención a los aspectos de mantenibilidad y extensibilidad del código, lo que facilita futuras actualizaciones y mejoras del proyecto.
+El proyecto demostró habilidades en el diseño de casos de prueba, la implementación de scripts de automatización, el uso de Selenium Web Driver y el conocimiento de programación en Java. Además, se prestaron especial atención a los aspectos de mantenibilidad y extensibilidad del código, lo que facilita futuras actualizaciones y mejoras del proyecto.
 
-La automatización de las pruebas en saucedemo.com resultó en una mayor eficiencia, ya que se redujo el tiempo necesario para realizar pruebas manuales repetitivas. Además, proporcionó una mayor confiabilidad en la detección de errores y problemas funcionales, lo que a su vez mejoró la calidad del sitio web.
+La automatización de las pruebas en el sitio saucedemo.com resultó en una mayor eficiencia, ya que se redujo el tiempo necesario para realizar pruebas manuales repetitivas. Además, proporcionó una mayor confiabilidad en la detección de errores y problemas funcionales, lo que a su vez mejoró la calidad del sitio web.
 
 
 
@@ -71,7 +71,7 @@ Para la construcción del proyecto se emplearon las siguientes tecnologías , li
 
 
 
-# Lecciones Aprendidas: Skills 
+## 10. Lecciones Aprendidas: Skills 
 - Maven Project 
  - TestNG : CrossBrowsing, Data Provider , Test Report.
  - JUnit
