@@ -12,6 +12,8 @@ El proyecto demostró habilidades en el diseño de casos de prueba, la implement
 
 La automatización de las pruebas en saucedemo.com resultó en una mayor eficiencia, ya que se redujo el tiempo necesario para realizar pruebas manuales repetitivas. Además, proporcionó una mayor confiabilidad en la detección de errores y problemas funcionales, lo que a su vez mejoró la calidad del sitio web.
 
+
+
 [TOC]
 
 ## 1. Resumen del proyecto
