@@ -44,7 +44,7 @@ Para la construcción del proyecto se emplearon las siguientes tecnologías , li
 
 - Apache Poi
 - JUnit
-- Commons IO
+- Commons IO: Generar reporte de capturas de evidencias.
 
 ### 4.3 Herramientas
 
@@ -66,20 +66,12 @@ Para la construcción del proyecto se emplearon las siguientes tecnologías , li
 
 
 
-## 9. Lecciones aprendidas
+## 9. Capturas de pantalla y ejemplos
 
 
 
-## 10. Capturas de pantalla y ejemplos
 
-
-
-## Sauce Demo
-
- - 
-
-
-## Skills 
+# Lecciones Aprendidas: Skills 
 - Maven Project 
  - TestNG : CrossBrowsing, Data Provider , Test Report.
  - JUnit
