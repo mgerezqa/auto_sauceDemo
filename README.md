@@ -14,8 +14,6 @@ La automatización de las pruebas en saucedemo.com resultó en una mayor eficien
 
 
 
-[TOC]
-
 ## 1. Resumen del proyecto
 
 El proyecto de automatización del sitio saucedemo.com consistió en desarrollar una serie de pruebas automatizadas utilizando el framework Selenium con el lenguaje de programación Java. El propósito principal fue demostrar habilidades en automatización de pruebas y garantizar la calidad del sitio web saucedemo.com.
