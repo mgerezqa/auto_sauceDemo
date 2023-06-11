@@ -12,15 +12,15 @@ El proyecto demostró habilidades en el diseño de casos de prueba, la implement
 
 La automatización de las pruebas en el sitio saucedemo.com resultó en una mayor eficiencia, ya que se redujo el tiempo necesario para realizar pruebas manuales repetitivas. Además, proporcionó una mayor confiabilidad en la detección de errores y problemas funcionales, lo que a su vez mejoró la calidad del sitio web.
 
-
-
 ## 1. Resumen del proyecto
 
 El proyecto de automatización del sitio saucedemo.com consistió en desarrollar una serie de pruebas automatizadas utilizando el framework Selenium con el lenguaje de programación Java. El propósito principal fue demostrar habilidades en automatización de pruebas y garantizar la calidad del sitio web saucedemo.com.
 
 ## 2. Objetivos
 
-Especifica los objetivos del proyecto de automatización, como mejorar la eficiencia de las pruebas, reducir el tiempo necesario para realizar las pruebas manuales, aumentar la cobertura de las pruebas, etc.
+- Automatizar pruebas de funcionalidad para mejorar la eficiencia y precisión de las pruebas.
+- Reducir el tiempo y los recursos requeridos para realizar pruebas manuales.
+- Detectar errores y problemas en el sitio web de manera temprana.
 
 ## 3. Alcance
 
@@ -37,22 +37,18 @@ Para la construcción del proyecto se emplearon las siguientes tecnologías , li
 
 ### 4.1 Tecnologías 
 
-- Selenium Web Driver
-- Java
+- Selenium WebDriver: Framework de automatización de pruebas para interactuar con los elementos de la interfaz de usuario.
+- Java: Lenguaje de programación utilizado para desarrollar las pruebas automatizadas.
+- TestNG: Framework de pruebas utilizado para la ejecución y gestión de los casos de prueba.
+- Maven: Gestor de dependencias utilizado para la gestión del proyecto.
 
-### 4.2 Librerías
-
-- Apache Poi
-- JUnit
-- Commons IO: Generar reporte de capturas de evidencias.
-
-### 4.3 Herramientas
+### 4.2 Herramientas
 
 - IDE : Eclipse
 
 ## 5. Arquitectura de las pruebas
 
-
+El proyecto sigue el patrón Page Object Model (POM) para una mejor organización y mantenibilidad. Los elementos de la interfaz de usuario se encuentran separados en clases individuales, lo que permite un fácil mantenimiento y reutilización del código.
 
 ## 6. Casos de prueba
 
@@ -60,7 +56,9 @@ Para la construcción del proyecto se emplearon las siguientes tecnologías , li
 
 ## 7. Configuración y ejecución
 
-
+- Se requiere tener instalado Java Development Kit (JDK) y Maven para ejecutar las pruebas.
+- Las dependencias y configuraciones necesarias están definidas en el archivo pom.xml.
+- Para ejecutar las pruebas, se utiliza el comando `mvn test` en la terminal o se ejecutan los archivos de prueba individualmente.
 
 ## 8. Resultados y métricas
 

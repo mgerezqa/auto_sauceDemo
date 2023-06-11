@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 //Page Factory
@@ -33,6 +34,8 @@ public class PaginaProductos {
 	@FindBy(how = How.CSS, using = "#logout_sidebar_link")
 	WebElement btnLogout;
 	
+	@FindBy(className ="product_sort_container" )
+	WebElement btnSort;
 	
 	public PaginaProductos(WebDriver driver){
 		PageFactory.initElements(driver, this);
@@ -65,5 +68,29 @@ public class PaginaProductos {
 	
 	public void hacerClickenCerrarSesion() {
 		btnLogout.click();
+	}
+	
+	public void ordenarSegunCriterio(String optionValue) {
+		Select sortSelect = new Select(btnSort);
+		sortSelect.selectByValue(optionValue);		
+	}
+	
+	public void ordenarPorOrdenAlfabeticoA_Z() {
+		Select sortSelect = new Select(btnSort);
+		sortSelect.selectByValue("az");		
+	}
+	
+	public void ordenarPorOrdenAlfabeticoZ_A() {
+		Select sortSelect = new Select(btnSort);
+		sortSelect.selectByValue("za");
+	}
+	
+	public void ordenarPorPrecioMenor() {
+		Select sortSelect = new Select(btnSort);
+		sortSelect.selectByValue("lohi");
+	}
+	public void ordenarPorPrecioMayor() {
+		Select sortSelect = new Select(btnSort);
+		sortSelect.selectByValue("hilo");
 	}
 }
