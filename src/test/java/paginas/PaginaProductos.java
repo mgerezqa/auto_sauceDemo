@@ -40,6 +40,9 @@ public class PaginaProductos {
 	
     @FindBy(className = "inventory_item_name")
     List<WebElement> productNames;
+    
+    @FindBy(className = "inventory_item_price")
+    List <WebElement> productPrices;
 	
 	public PaginaProductos(WebDriver driver){
 		PageFactory.initElements(driver, this);
@@ -104,9 +107,16 @@ public class PaginaProductos {
 
     public boolean losProductosEstanOrdenadosSegunCriterio(String sortOption) {
         List <String> originalProductNames = new ArrayList <String>(); // declaro una colección de array de strings, para almacenar los textos identificadores de los productos.
+        List <Float> originalProductPrices = new ArrayList <>(); 
         
         for (WebElement productName : productNames) { // utilizo estructura forEach para recorrer cada elemento de toda la lista de WebElements es decir  cada producto, y pido el texto que lo identifica y agrego dicho array a otra colección
             originalProductNames.add(productName.getText());
+        }
+        
+        for (WebElement productPrice: productPrices) { // utilizo estructura forEach para recorrer cada elemento de toda la lista de WebElements es decir  cada producto, y pido el texto que lo identifica y agrego dicho array a otra colección
+            String priceStr = productPrice.getText().replace("$", "");
+            float price = Float.parseFloat(priceStr);
+            originalProductPrices.add(price);
         }
 
         switch (sortOption) {
@@ -128,7 +138,27 @@ public class PaginaProductos {
                 }
                 break;
 
-            // Agregar más casos para otros criterios de ordenamiento si es necesario
+            case "lohi":
+                // Verificar que los precios esten ordenados de menor a mayor
+                for (int i = 0; i < originalProductPrices.size() - 1; i++) {
+                    if (originalProductPrices.get(i) > originalProductPrices.get(i + 1)) {
+                        return false;
+                    }
+                }
+                break;
+
+            case "hilo":
+                // Verificar que los precios esten ordenados de mayor a menor
+                for (int i = 0; i > originalProductPrices.size() - 1; i++) {
+                    if (originalProductPrices.get(i) > originalProductPrices.get(i + 1)) {
+                        return false;
+                    }
+                }
+                break;
+
+                
+                
+                // Agregar más casos para otros criterios de ordenamiento si es necesario
 
             default:
                 return false;

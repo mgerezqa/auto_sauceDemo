@@ -231,6 +231,8 @@ public class SauceDemoTest {
 		PaginaProductos productos = new PaginaProductos(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		productos.ordenarSegunCriterio("za");
+		Assert.assertTrue(productos.losProductosEstanOrdenadosSegunCriterio("za"),"Los productos no están correctamente ordenados");
+		
 		this.cerrarSesion();
 	}
 	
@@ -241,6 +243,7 @@ public class SauceDemoTest {
 		PaginaProductos productos = new PaginaProductos(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		productos.ordenarSegunCriterio("lohi");
+		Assert.assertTrue(productos.losProductosEstanOrdenadosSegunCriterio("lohi"),"Los productos no están correctamente ordenados");
 		this.cerrarSesion();
 	}
 	
@@ -250,6 +253,7 @@ public class SauceDemoTest {
 		PaginaProductos productos = new PaginaProductos(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		productos.ordenarSegunCriterio("hilo");
+		Assert.assertTrue(productos.losProductosEstanOrdenadosSegunCriterio("hilo"),"Los productos no están correctamente ordenados");
 		this.cerrarSesion();
 	}
 	
