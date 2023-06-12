@@ -31,6 +31,8 @@ import org.testng.annotations.Test;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import java.io.IOException;
 import paginas.PaginaInicio;
@@ -88,7 +90,16 @@ public class SauceDemoTest {
 
 	}
 
-	
+	@Test
+	public void iniciarSesion_fail() { //iniciar sesión con credenciales no validas
+		PaginaInicio login = new PaginaInicio (driver);
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+
+		login.ingresarCredenciales("locked_out_user","secret_sauce");
+		login.hacerClickEnLogin();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		login.mensajeDeError();
+	}
 	
 	
 	@Test(dataProvider = "Datos Excel")

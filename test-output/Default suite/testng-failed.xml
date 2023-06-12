@@ -6,8 +6,8 @@
       <class name="pruebas.SauceDemoTest">
         <methods>
           <include name="cerrarNavegador"/>
+          <include name="iniciarYCerrarSesion" invocation-numbers="1"/>
           <include name="setUp"/>
-          <include name="ordenarProductosPorOrdenAlfInverso"/>
         </methods>
       </class> <!-- pruebas.SauceDemoTest -->
     </classes>
