@@ -72,7 +72,8 @@ Se adjuntan las evidencias del correcto funcionamiento de los scripts realizados
 
 **CP01_iniciarSesion_fail()**:
 
-![iniciarSesionConCredencialnvalida](D:\Documentos\Practicas_Testing\Selenenium_WebDriver\capturasDePantallaProyectos\1_sauceDemo\iniciarSesionConCredencialnvalida.gif)
+
+![iniciarSesionConCredencialnvalida](https://github.com/mgerezqa/auto_sauceDemo/assets/54424951/275b9e7d-a868-44f2-939b-4c2332f30249)
 
 
 
