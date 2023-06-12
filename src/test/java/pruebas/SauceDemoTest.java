@@ -98,7 +98,7 @@ public class SauceDemoTest {
 		login.ingresarCredenciales("locked_out_user","secret_sauce");
 		login.hacerClickEnLogin();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		login.mensajeDeError();
+		Assert.assertTrue(login.mensajeDeError(),"Ingreso de credenciales validas");
 	}
 	
 	

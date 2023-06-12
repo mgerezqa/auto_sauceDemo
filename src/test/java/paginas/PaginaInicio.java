@@ -39,13 +39,15 @@ public class PaginaInicio {
 		buttonLogin.click();
 	}
 	
-	public void mensajeDeError() {
+	public boolean mensajeDeError() {
 		
 	      if (errorElement.isDisplayed()) {
 	            String errorMessage = errorElement.getText();
 	            System.out.println("Inicio de sesión fallido: " + errorMessage);
+	            return true;
 	        } else {
 	            System.out.println("No se encontró un mensaje de error de inicio de sesión");
+	            return false;
 	        }
 
 	}

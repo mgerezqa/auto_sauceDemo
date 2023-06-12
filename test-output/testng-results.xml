@@ -1,97 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
+<testng-results ignored="8" total="9" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-11T21:07:49 ART" name="Default suite" finished-at="2023-06-11T21:08:15 ART" duration-ms="26260">
+  <suite started-at="2023-06-11T22:25:38 ART" name="Default suite" finished-at="2023-06-11T22:25:38 ART" duration-ms="729">
     <groups>
     </groups>
-    <test started-at="2023-06-11T21:07:49 ART" name="Default test" finished-at="2023-06-11T21:08:15 ART" duration-ms="26260">
+    <test started-at="2023-06-11T22:25:38 ART" name="Default test" finished-at="2023-06-11T22:25:38 ART" duration-ms="729">
       <class name="pruebas.SauceDemoTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:07:45 ART" name="setUp" finished-at="2023-06-11T21:07:49 ART" duration-ms="3711" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:pruebas.SauceDemoTest@8f2ef19]" started-at="2023-06-11T22:25:33 ART" name="setUp" finished-at="2023-06-11T22:25:38 ART" duration-ms="4193" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="agregarItem()[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:07:49 ART" name="agregarItem" finished-at="2023-06-11T21:07:50 ART" duration-ms="821" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- agregarItem -->
-        <test-method signature="agregarTodosLosItems()[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:07:50 ART" name="agregarTodosLosItems" finished-at="2023-06-11T21:07:51 ART" duration-ms="908" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- agregarTodosLosItems -->
-        <test-method signature="iniciarSesion_fail()[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:07:51 ART" name="iniciarSesion_fail" finished-at="2023-06-11T21:07:51 ART" duration-ms="391" status="PASS">
+        <test-method signature="iniciarSesion_fail()[pri:0, instance:pruebas.SauceDemoTest@8f2ef19]" started-at="2023-06-11T22:25:38 ART" name="iniciarSesion_fail" finished-at="2023-06-11T22:25:38 ART" duration-ms="647" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciarSesion_fail -->
-        <test-method signature="iniciarYCerrarSesion(java.lang.String,java.lang.String)[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:07:52 ART" name="iniciarYCerrarSesion" data-provider="Datos Excel" finished-at="2023-06-11T21:07:52 ART" duration-ms="554" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[standard_user]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[secret_sauce]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- iniciarYCerrarSesion -->
-        <test-method signature="iniciarYCerrarSesion(java.lang.String,java.lang.String)[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:07:52 ART" name="iniciarYCerrarSesion" data-provider="Datos Excel" finished-at="2023-06-11T21:07:53 ART" duration-ms="567" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[problem_user]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[secret_sauce]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- iniciarYCerrarSesion -->
-        <test-method signature="iniciarYCerrarSesion(java.lang.String,java.lang.String)[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:07:53 ART" name="iniciarYCerrarSesion" data-provider="Datos Excel" finished-at="2023-06-11T21:07:59 ART" duration-ms="5544" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[performance_glitch_user]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[secret_sauce]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- iniciarYCerrarSesion -->
-        <test-method signature="ordenarProductosPorOrdenAlf()[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:07:59 ART" name="ordenarProductosPorOrdenAlf" finished-at="2023-06-11T21:07:59 ART" duration-ms="781" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ordenarProductosPorOrdenAlf -->
-        <test-method signature="ordenarProductosPorOrdenAlfInverso()[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:07:59 ART" name="ordenarProductosPorOrdenAlfInverso" finished-at="2023-06-11T21:08:00 ART" duration-ms="793" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ordenarProductosPorOrdenAlfInverso -->
-        <test-method signature="ordenarProductosPorPrecioMayor()[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:08:00 ART" name="ordenarProductosPorPrecioMayor" finished-at="2023-06-11T21:08:01 ART" duration-ms="747" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ordenarProductosPorPrecioMayor -->
-        <test-method signature="ordenarProductosPorPrecioMenor()[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:08:01 ART" name="ordenarProductosPorPrecioMenor" finished-at="2023-06-11T21:08:02 ART" duration-ms="757" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ordenarProductosPorPrecioMenor -->
-        <test-method signature="realizarCompra()[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:08:02 ART" name="realizarCompra" finished-at="2023-06-11T21:08:15 ART" duration-ms="13446" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- realizarCompra -->
-        <test-method is-config="true" signature="cerrarNavegador()[pri:0, instance:pruebas.SauceDemoTest@5b1669c0]" started-at="2023-06-11T21:08:15 ART" name="cerrarNavegador" finished-at="2023-06-11T21:08:17 ART" duration-ms="2167" status="PASS">
+        <test-method is-config="true" signature="cerrarNavegador()[pri:0, instance:pruebas.SauceDemoTest@8f2ef19]" started-at="2023-06-11T22:25:38 ART" name="cerrarNavegador" finished-at="2023-06-11T22:25:41 ART" duration-ms="2186" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cerrarNavegador -->
