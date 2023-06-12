@@ -70,7 +70,9 @@ Adjuntar reportes:
 
 Se adjuntan las evidencias del correcto funcionamiento de los scripts realizados:
 
-CP01_iniciarSesion_fail():
+**CP01_iniciarSesion_fail()**:
+
+![iniciarSesionConCredencialnvalida](D:\Documentos\Practicas_Testing\Selenenium_WebDriver\capturasDePantallaProyectos\1_sauceDemo\iniciarSesionConCredencialnvalida.gif)
 
 
 
