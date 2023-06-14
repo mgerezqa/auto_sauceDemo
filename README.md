@@ -71,9 +71,32 @@ Adjuntar reportes:
 Se adjuntan las evidencias del correcto funcionamiento de los scripts realizados:
 
 **CP01_iniciarSesion_fail()**:
+Se intenta acceder al sitio con un usuario que fue bloqueado por los administradores del sitio , para ello se ejecuta el caso de prueba:
+
+![CP01_iniciarSesionFail](https://github.com/mgerezqa/auto_sauceDemo/assets/54424951/1348aced-cc68-4821-81be-f821054a8ec5)
+
+**CP02_iniciarSesion_userFail()**:
+Se intenta acceder al sitio con un usuario inexistente pero con una contraseña valida: 
+
+![CP02_iniciarSesionFail](https://github.com/mgerezqa/auto_sauceDemo/assets/54424951/3aa14659-c067-49b1-8321-10a8331f9b58)
 
 
-![iniciarSesionConCredencialnvalida](https://github.com/mgerezqa/auto_sauceDemo/assets/54424951/275b9e7d-a868-44f2-939b-4c2332f30249)
+**CP03_iniciarSesion_passfail()**:
+Se intenta acceder al sitio con un usuario válido  pero con una contraseña incorrecta:
+
+![CP03_iniciarSesionFail](https://github.com/mgerezqa/auto_sauceDemo/assets/54424951/a1ae2ddb-1483-40f9-b617-e5ea211333cb)
+
+**CP04_iniciarYCerrarSesion()**:
+
+Se realiza el inicio de sesión mediante la validación de un conjunto de datos de un archivo externo llamado Datos_IniciarSesion.xlsx el cual contendrá información de las credenciales de acceso al sitio, para ello hacemos uso de la anotación data provider en el método de prueba. 
+
+![image](https://github.com/mgerezqa/auto_sauceDemo/assets/54424951/89dffb6f-bb41-422c-90ae-d00caf5aa38d)
+
+Ejecución del caso de prueba: 
+
+![iniciarSesionConDataProvider](https://github.com/mgerezqa/auto_sauceDemo/assets/54424951/db5e2121-1510-4395-bd45-89a2ea2cbdae)
+
+
 
 
 
